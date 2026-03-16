@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
-import { SearchFormComponent } from "./components/search-form/search-form.component";
-import { SharedModule } from './shared/shared.module';
+/******************************************************************************
+ * FICHIER : app.component.ts
+ * ROLE    : Composant racine qui encapsule la navigation et le routeur.
+ ******************************************************************************/
 
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 @Component({
-  standalone: true,  
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  imports: [SearchFormComponent, SharedModule],
+  standalone: true,
+  imports: [RouterOutlet, NavbarComponent, FooterComponent],
+  templateUrl: './app.component.html'
 })
-export class AppComponent { 
-  title = 'Hello World!';
-}
+export class AppComponent {}

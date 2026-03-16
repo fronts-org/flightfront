@@ -1,0 +1,7 @@
+.header-row { display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+.cards { grid-template-columns: repeat(2, 1fr); }
+.item { padding: 22px; }
+.item p { color: var(--muted); }
+.row { display: flex; justify-content: space-between; gap: 12px; }
+@media (max-width: 900px) { .cards { grid-template-columns: 1fr; } }
+@media (max-width: 700px) { .header-row { flex-direction: column; align-items: flex-start; } }

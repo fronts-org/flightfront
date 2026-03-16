@@ -1,0 +1,6 @@
+.cards { grid-template-columns: repeat(3, 1fr); }
+.passenger-card { padding: 22px; }
+.passenger-card p { color: var(--muted); }
+.meta { display: flex; justify-content: space-between; gap: 12px; margin-top: 12px; }
+@media (max-width: 980px) { .cards { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 700px) { .cards { grid-template-columns: 1fr; } }

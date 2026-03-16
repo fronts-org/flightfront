@@ -1,7 +1,11 @@
-import { bootstrapApplication } from '@angular/platform-browser';
-import { AppComponent } from './app/app.component';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+/******************************************************************************
+ * FICHIER : main.ts
+ * ROLE    : Point d'entrée principal de l'application Angular.
+ ******************************************************************************/
 
-bootstrapApplication(AppComponent, {
-  providers: [provideAnimationsAsync()],
-});
+import { bootstrapApplication } from '@angular/platform-browser';
+import { appConfig } from './app/app.config';
+import { AppComponent } from './app/app.component';
+
+bootstrapApplication(AppComponent, appConfig)
+  .catch((error) => console.error('Erreur de démarrage Angular :', error));

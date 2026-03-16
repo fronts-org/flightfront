@@ -1,0 +1,8 @@
+.nav-wrap { position: sticky; top: 0; z-index: 20; padding: 18px 0 0; }
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.logo { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 14px; background: linear-gradient(135deg, var(--primary), var(--secondary)); font-weight: 700; }
+.brand small { display: block; color: var(--muted); }
+.links { display: flex; gap: 18px; flex-wrap: wrap; }
+.links a { padding: 10px 12px; border-radius: 12px; color: var(--muted); }
+.links a.active, .links a:hover { color: white; background: rgba(255,255,255,0.08); }

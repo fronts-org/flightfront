@@ -1,0 +1,6 @@
+.booking-grid { grid-template-columns: 1fr 1fr; }
+.details, .form-card { padding: 24px; }
+.details ul { padding-left: 18px; color: var(--muted); }
+.route { font-size: 1.2rem; font-weight: 700; }
+.form-card { display: flex; flex-direction: column; gap: 16px; }
+@media (max-width: 900px) { .booking-grid { grid-template-columns: 1fr; } }

@@ -1,6 +1,59 @@
-/* FICHIER : styles.css | ROLE : Styles globaux de l'application Angular. */
-html, body { margin: 0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8fbff; color: #0f172a; }
+/******************************************************************************
+ * FICHIER : styles.css
+ * ROLE    : Styles globaux du frontend.
+ ******************************************************************************/
+
+:root {
+  --bg: #071120;
+  --bg-soft: #0f1d33;
+  --surface: rgba(255, 255, 255, 0.08);
+  --surface-strong: rgba(255, 255, 255, 0.12);
+  --text: #f5f7fb;
+  --muted: #a9b6cc;
+  --primary: #4da8ff;
+  --secondary: #7b61ff;
+  --success: #27c281;
+  --warning: #ffb547;
+  --danger: #ff6b6b;
+  --border: rgba(255, 255, 255, 0.12);
+  --shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  --radius: 20px;
+  --container: 1200px;
+}
 * { box-sizing: border-box; }
-a, button, input, select, textarea { transition: all 0.2s ease; }
-button:hover { transform: translateY(-1px); box-shadow: 0 10px 25px rgba(37,99,235,0.18); }
-input:focus, select:focus, textarea:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.12); }
+html, body {
+  margin: 0;
+  min-height: 100%;
+  font-family: Inter, Segoe UI, Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(77,168,255,0.15), transparent 30%),
+    radial-gradient(circle at top right, rgba(123,97,255,0.18), transparent 30%),
+    linear-gradient(180deg, #071120 0%, #0b1728 100%);
+  color: var(--text);
+}
+body { line-height: 1.5; }
+a { color: inherit; text-decoration: none; }
+button, input, select { font: inherit; }
+.container { width: min(100% - 32px, var(--container)); margin: 0 auto; }
+.card { background: var(--surface); backdrop-filter: blur(12px); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
+.btn { border: 0; border-radius: 14px; padding: 12px 18px; cursor: pointer; color: white; background: linear-gradient(135deg, var(--primary), var(--secondary)); transition: transform .2s ease, opacity .2s ease; }
+.btn:hover { transform: translateY(-1px); }
+.btn.secondary { background: rgba(255,255,255,0.08); border: 1px solid var(--border); }
+.btn.success { background: linear-gradient(135deg, #19b977, #39d98a); }
+.grid { display: grid; gap: 24px; }
+.section-title { font-size: clamp(1.8rem, 3vw, 2.8rem); margin: 0 0 12px; }
+.section-subtitle { color: var(--muted); margin: 0 0 24px; }
+.page-shell { padding: 32px 0 56px; }
+.form-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.field { display: flex; flex-direction: column; gap: 8px; }
+.field label { color: var(--muted); font-size: 0.95rem; }
+.field input, .field select { padding: 14px 16px; border-radius: 14px; border: 1px solid var(--border); background: rgba(255,255,255,0.06); color: white; }
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td { padding: 14px 12px; border-bottom: 1px solid var(--border); text-align: left; }
+.table th { color: var(--muted); font-weight: 600; }
+.badge { display: inline-block; padding: 6px 10px; border-radius: 999px; font-size: .85rem; background: rgba(255,255,255,0.08); border: 1px solid var(--border); }
+.metric { padding: 22px; }
+.metric h3 { margin: 0; font-size: .95rem; color: var(--muted); }
+.metric strong { display: block; margin-top: 8px; font-size: 2rem; }
+@media (max-width: 920px) { .form-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .form-grid { grid-template-columns: 1fr; } }
