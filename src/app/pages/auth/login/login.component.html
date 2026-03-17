@@ -1,0 +1,51 @@
+<section class="auth-shell">
+  <div class="auth-card glass-card">
+    <div class="auth-brand">
+      <p class="eyebrow">Authentification</p>
+      <h1>Connexion à Flight</h1>
+      <p class="subtitle">
+        Accédez à votre espace de réservation ou à votre console d'administration.
+      </p>
+    </div>
+
+    <form class="auth-form" (ngSubmit)="submit()" #loginForm="ngForm">
+      <label class="field">
+        <span>Email</span>
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="form.email"
+          placeholder="vous@exemple.com"
+          required />
+      </label>
+
+      <label class="field">
+        <span>Mot de passe</span>
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="form.password"
+          placeholder="Votre mot de passe"
+          required />
+      </label>
+
+      <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+      <button class="primary-btn" type="submit">Se connecter</button>
+
+      <div class="demo-actions">
+        <button type="button" class="secondary-btn" (click)="fillAdminDemo()">
+          Démo Admin
+        </button>
+        <button type="button" class="secondary-btn" (click)="fillPassengerDemo()">
+          Démo Passager
+        </button>
+      </div>
+
+      <p class="auth-link">
+        Pas encore de compte ?
+        <a routerLink="/register">Créer un compte</a>
+      </p>
+    </form>
+  </div>
+</section>

@@ -1,8 +1,84 @@
-.nav-wrap { position: sticky; top: 0; z-index: 20; padding: 18px 0 0; }
-.nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; }
-.brand { display: flex; align-items: center; gap: 12px; }
-.logo { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 14px; background: linear-gradient(135deg, var(--primary), var(--secondary)); font-weight: 700; }
-.brand small { display: block; color: var(--muted); }
-.links { display: flex; gap: 18px; flex-wrap: wrap; }
-.links a { padding: 10px 12px; border-radius: 12px; color: var(--muted); }
-.links a.active, .links a:hover { color: white; background: rgba(255,255,255,0.08); }
+/******************************************************************************
+ * FICHIER : navbar.component.css
+ * ROLE    : Styles de la barre de navigation principale.
+ ******************************************************************************/
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  backdrop-filter: blur(18px);
+  background: rgba(8, 15, 31, 0.72);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand-zone {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+}
+
+.brand {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.tag {
+  color: var(--muted-text);
+  font-size: .9rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted-text);
+  padding: .7rem .95rem;
+  border-radius: 999px;
+  transition: all .25s ease;
+  border: 1px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.nav-cta {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #07111f !important;
+  font-weight: 700;
+  border-color: transparent !important;
+}
+
+.nav-danger {
+  background: rgba(255, 107, 107, .12);
+  border-color: rgba(255, 107, 107, .28) !important;
+  color: #ffd1d1 !important;
+}
+
+@media (max-width: 900px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    width: 100%;
+  }
+}

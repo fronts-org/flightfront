@@ -1,1 +1,57 @@
-<header class="nav-wrap"><div class="container nav card"><a class="brand" routerLink="/"><span class="logo">✈</span><div><strong>Flight Pro</strong><small>Smart airline operations</small></div></a><nav class="links"><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Accueil</a><a routerLink="/search" routerLinkActive="active">Recherche</a><a routerLink="/my-bookings" routerLinkActive="active">Mes réservations</a><a routerLink="/admin" routerLinkActive="active">Administration</a></nav></div></header>
+<header class="topbar">
+  <div class="brand-zone">
+    <a class="brand" routerLink="/">Flight</a>
+    <span class="tag">Airline Experience Platform</span>
+  </div>
+
+  <nav class="nav-links">
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }">
+      Accueil
+    </a>
+
+    <a
+      routerLink="/search"
+      routerLinkActive="active">
+      Vols
+    </a>
+
+    <a
+      *ngIf="authService.isAuthenticated()"
+      routerLink="/my-bookings"
+      routerLinkActive="active">
+      Mes réservations
+    </a>
+
+    <a
+      *ngIf="authService.isAdmin()"
+      routerLink="/admin"
+      routerLinkActive="active">
+      Administration
+    </a>
+
+    <a
+      *ngIf="!authService.isAuthenticated()"
+      routerLink="/login"
+      routerLinkActive="active"
+      class="nav-cta">
+      Connexion
+    </a>
+
+    <a
+      *ngIf="!authService.isAuthenticated()"
+      routerLink="/register"
+      routerLinkActive="active">
+      Inscription
+    </a>
+
+    <a
+      *ngIf="authService.isAuthenticated()"
+      routerLink="/logout"
+      class="nav-cta nav-danger">
+      Déconnexion
+    </a>
+  </nav>
+</header>

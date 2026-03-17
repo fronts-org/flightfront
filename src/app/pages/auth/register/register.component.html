@@ -1,0 +1,62 @@
+<section class="auth-shell">
+  <div class="auth-card glass-card">
+    <div class="auth-brand">
+      <p class="eyebrow">Inscription</p>
+      <h1>Créer un compte passager</h1>
+      <p class="subtitle">
+        Rejoignez Flight pour réserver vos billets, suivre vos vols et consulter vos réservations.
+      </p>
+    </div>
+
+    <form class="auth-form" (ngSubmit)="submit()" #registerForm="ngForm">
+      <label class="field">
+        <span>Nom complet</span>
+        <input
+          type="text"
+          name="fullName"
+          [(ngModel)]="form.fullName"
+          placeholder="Votre nom complet"
+          required />
+      </label>
+
+      <label class="field">
+        <span>Email</span>
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="form.email"
+          placeholder="vous@exemple.com"
+          required />
+      </label>
+
+      <label class="field">
+        <span>Mot de passe</span>
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="form.password"
+          placeholder="Choisissez un mot de passe"
+          required />
+      </label>
+
+      <label class="field">
+        <span>Confirmer le mot de passe</span>
+        <input
+          type="password"
+          name="confirmPassword"
+          [(ngModel)]="form.confirmPassword"
+          placeholder="Répétez le mot de passe"
+          required />
+      </label>
+
+      <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+      <button class="primary-btn" type="submit">Créer mon compte</button>
+
+      <p class="auth-link">
+        Déjà inscrit ?
+        <a routerLink="/login">Se connecter</a>
+      </p>
+    </form>
+  </div>
+</section>
