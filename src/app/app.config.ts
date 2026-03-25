@@ -1,13 +1,7 @@
-/******************************************************************************
- * FICHIER : app.config.ts
- * ROLE    : Configuration globale de l'application Angular.
- ******************************************************************************/
-
-import { ApplicationConfig } from '@angular/core';
+import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { routes } from './app.routes';
-
-export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideHttpClient(withInterceptorsFromDi())]
-};
+import { authInterceptor } from './core/interceptors/auth.interceptor';
+import { refreshTokenInterceptor } from './core/interceptors/refresh-token.interceptor';
+export const appConfig: ApplicationConfig = { providers: [provideBrowserGlobalErrorListeners(), provideZonelessChangeDetection(), provideRouter(routes), provideHttpClient(withInterceptors([authInterceptor, refreshTokenInterceptor]))] };
